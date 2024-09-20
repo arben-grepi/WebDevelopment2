@@ -56,7 +56,7 @@ export const FormGetWord = () => {
         />
         {!isValid && <p className="text-danger">{errors.annaSana?.message}</p>}
         <label htmlFor="annaSana" className="form-label">
-          Sana englanniksi
+          Paina Käännä nappia
         </label>
         <input
           value={word}
