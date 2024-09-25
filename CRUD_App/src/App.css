@@ -1,4 +1,29 @@
-body {
-  padding-left: 20px;
-  padding-right: 20px;
+/* App.css */
+
+.custom-container {
+  width: 100%; /* Full width for extra small screens */
+}
+
+@media (min-width: 520px) {
+  .custom-container {
+    width: 50%; /* 50% of the screen width for medium screens */
+  }
+}
+
+@media (min-width: 960px) {
+  .custom-container {
+    width: 90%; /* 50% of the screen width for large screens */
+  }
+}
+
+@media (min-width: 1140px) {
+  .custom-container {
+    width: 50%; /* 50% of the screen width for extra large screens */
+  }
+}
+
+@media (min-width: 1320px) {
+  .custom-container {
+    width: 50%; /* 50% of the screen width for extra extra large screens */
+  }
 }

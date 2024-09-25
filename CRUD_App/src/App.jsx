@@ -9,16 +9,20 @@ import { GlobalProvider } from "./context/GlobalState";
 
 function App() {
   return (
-    <GlobalProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/add" element={<AddUser />} />
-          <Route path="/edit/:id" element={<EditUser />} />
-          <Route path="*" element={<h2>404 Not Found</h2>} />
-        </Routes>
-      </Router>
-    </GlobalProvider>
+    <div className="d-flex justify-content-center mt-5">
+      <div className="w-50" style={{ maxWidth: "500px" }}>
+        <GlobalProvider>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/add" element={<AddUser />} />
+              <Route path="/edit/:id" element={<EditUser />} />
+              <Route path="*" element={<h2>404 Not Found</h2>} />
+            </Routes>
+          </Router>
+        </GlobalProvider>
+      </div>
+    </div>
   );
 }
 
