@@ -1,6 +1,5 @@
 import { useContext, useState, useRef, useEffect } from "react";
 import { GlobalContext } from "../context/GlobalState";
-import { v4 as uuid } from "uuid";
 import Joi from "joi";
 
 export const AddTransaction = () => {
@@ -18,10 +17,11 @@ export const AddTransaction = () => {
       "string.empty": "Text is required",
       "any.required": "Text cannot be empty",
     }),
-    amount: Joi.number().not(0).required().messages({
+    amount: Joi.number().precision(2).not(0).required().messages({
       "number.base": "Amount must be a number",
       "number.empty": "Amount is required", // This will now trigger if amount is ""
-      "number.not": "Amount cannot be 0",
+      "number.min": "Amount must be greater than 0",
+      "number.precision": "Amount can have at most 2 decimal places", // Custom message for precision error
     }),
   });
 
@@ -41,7 +41,6 @@ export const AddTransaction = () => {
 
     setError(""); // Clear the error if validation passes
     const newTransaction = {
-      id: uuid(),
       text,
       amount: +amount, // Convert to number for transaction
     };
@@ -77,7 +76,7 @@ export const AddTransaction = () => {
             ref={amountInputRef}
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            type="number"
+            type="decimal"
             placeholder="Enter amount..."
           />
         </div>

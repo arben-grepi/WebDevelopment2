@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
+import { moneyFormatter } from "./utils/moneyFormatter";
 
 export const IncomeExpences = () => {
   const { transactions } = useContext(GlobalContext);
@@ -8,23 +9,21 @@ export const IncomeExpences = () => {
 
   const income = amounts
     .filter((item) => item > 0)
-    .reduce((acc, item) => (acc += item), 0)
-    .toFixed(2);
+    .reduce((acc, item) => (acc += item), 0);
 
-  const expense = (
-    amounts.filter((item) => item > 0).reduce((acc, item) => (acc += item), 0) *
-    -1
-  ).toFixed(2);
+  const expense =
+    amounts.filter((item) => item < 0).reduce((acc, item) => (acc += item), 0) *
+    -1;
 
   return (
     <div className="inc-exp-container">
       <div>
         <h4>Income</h4>
-        <p className="money plus">{income}</p>
+        <p className="money plus">{moneyFormatter(income)}</p>
       </div>
       <div>
         <h4>Expense</h4>
-        <p className="money minus">{expense}</p>
+        <p className="money minus">{moneyFormatter(expense)}</p>
       </div>
     </div>
   );
