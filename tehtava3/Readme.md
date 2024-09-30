@@ -19,6 +19,9 @@ This application stores individual data in a MariaDB database called `tehtava3`.
    git clone https://github.com/arben-grepi/WebDevelopment2.git
    cd WebDevelopment2/tehtava3
    npm install
+   cd client
+   npm install
+   cd ..
 
    ```
 
