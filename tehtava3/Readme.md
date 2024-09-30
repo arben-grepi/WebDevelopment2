@@ -36,7 +36,6 @@ This application stores individual data in a MariaDB database called `tehtava3`.
 
    ```
 
-   ```
 
 5. **Start both the backend server and the client with** 
 
