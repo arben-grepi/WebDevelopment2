@@ -36,9 +36,12 @@ This application stores individual data in a MariaDB database called `tehtava3`.
 
    ```
 
-5. Start the application using
+   ```
+
+5. **Start both the backend server and the client with** 
 
    ```bash
-   nodemon server.js
+   npm run dev
 
    ```
+
