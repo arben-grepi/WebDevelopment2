@@ -1,0 +1,19 @@
+{
+  "name": "testaus1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.7.3",
+    "supertest": "^7.0.0"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
