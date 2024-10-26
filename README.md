@@ -10,4 +10,4 @@ This application is a player management system that allows users to view, edit, 
 
 ### tehtava5
 
-Practising dockerizing an application
+Practiced Dockerizing an application by using Docker Compose to create a multi-container app, which I then pushed to Docker Hub under the repository arbengrepi/julkinen.
